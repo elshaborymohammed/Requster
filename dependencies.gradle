@@ -1,0 +1,87 @@
+ext {
+    /** Java Core */
+    javaxAnnotationsVersion = '1.0'
+    javaxInjectVersion = '1'
+    javaX = [
+            annotation: "javax.annotation:jsr250-api:$javaxAnnotationsVersion",
+            inject    : "javax.inject:javax.inject:$javaxInjectVersion",
+    ]
+
+    /** Android Compat */
+    navigationVersion = "2.2.0"
+    androidx = [
+            annotation      : "androidx.annotation:annotation:1.1.0",
+            appCompat       : "androidx.appcompat:appcompat:1.1.0",
+            core            : "androidx.core:core:1.3.0",
+            coreKtx         : "androidx.core:core-ktx:1.3.0",
+            recyclerView    : "androidx.recyclerview:recyclerview:1.1.0",
+            cardView        : "androidx.cardview:cardview:1.0.0",
+            supportV4       : "androidx.legacy:legacy-support-v4:1.0.0",
+            mediaCompat     : "androidx.media:media:1.0.0",
+            vector          : "androidx.vectordrawable:vectordrawable:1.0.0",
+            animatedVector  : "androidx.vectordrawable:vectordrawable-animated:1.0.0",
+            material        : "com.google.android.material:material:1.3.0-alpha01",
+            constraintLayout: "androidx.constraintlayout:constraintlayout:2.0.0-beta6",
+
+            lifecycle       : [
+                    extension   : "androidx.lifecycle:lifecycle-extensions:2.2.0",
+                    compiler    : "androidx.lifecycle:lifecycle-compiler:2.2.0",
+                    liveData    : "androidx.lifecycle:lifecycle-livedata:2.2.0",
+                    viewModel   : "androidx.lifecycle:lifecycle-viewmodel:2.2.0",
+                    viewModelKtx: "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0",
+            ],
+            room            : [
+                    runtime : "androidx.room:room-runtime:2.2.0",
+                    rxjava  : "androidx.room:room-rxjava2:2.2.0",
+                    Compiler: "androidx.room:room-compiler:2.2.0",
+            ],
+            navigation      : [
+                    classpath: "androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion",
+                    java     : [
+                            safeargs: "androidx.navigation.safeargs",
+                            fragment: "androidx.navigation:navigation-fragment:$navigationVersion",
+                            ui      : "androidx.navigation:navigation-ui:$navigationVersion",
+                    ],
+                    kts      : [
+                            safeargs: "androidx.navigation.safeargs.kotlin",
+                            fragment: "androidx.navigation:navigation-fragment-ktx:$navigationVersion",
+                            ui      : "androidx.navigation:navigation-ui-ktx:$navigationVersion",
+                    ]
+            ]
+    ]
+
+    /** Reactive Lib */
+    reactive = [
+            rxJava   : "io.reactivex.rxjava3:rxjava:3.0.0",
+            rxAndroid: "io.reactivex.rxjava3:rxandroid:3.0.0",
+            rxRelay  : "com.jakewharton.rxrelay3:rxrelay:3.0.0",
+    ]
+
+    /** OkHttp */
+    okhttpVersion = '4.7.2'
+    http = [
+            okhttp : "com.squareup.okhttp3:okhttp:$okhttpVersion",
+            logging: "com.squareup.okhttp3:logging-interceptor:$okhttpVersion",
+            mock   : "com.squareup.okhttp3:mockwebserver:$okhttpVersion",
+    ]
+
+    /** Retrofit and GSON */
+    retrofitVersion = '2.9.0'
+    gsonVersion = '2.8.6'
+    restful = [
+            retrofit    : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitMock: "com.squareup.retrofit2:retrofit-mock:$retrofitVersion",
+            converter   : "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            adapter     : "com.squareup.retrofit2:adapter-rxjava3:$retrofitVersion",
+            gson        : "com.google.code.gson:gson:$gsonVersion",
+    ]
+
+    /** Glid */
+    glideVersion = '4.11.0'
+    image = [
+            glide          : "com.github.bumptech.glide:glide:$glideVersion",
+            compiler       : "com.github.bumptech.glide:compiler:$glideVersion",
+            okhttp         : "com.github.bumptech.glide:okhttp3-integration:$glideVersion",
+            transformations: "jp.wasabeef:glide-transformations:4.1.0",
+    ]
+}

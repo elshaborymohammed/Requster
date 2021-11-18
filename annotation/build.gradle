@@ -1,0 +1,8 @@
+apply plugin: 'java-library'
+
+dependencies {
+    compileOnly androidx.annotation
+}
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
