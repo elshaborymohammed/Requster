@@ -37,7 +37,7 @@ subprojects {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/elshaborymohammed/Requster")
                 credentials {
-                    username = github['gpr.usr'] ?: System.getenv("GPR_USER")
+                    username = github['gpr.user'] ?: System.getenv("GPR_USER")
                     password = github['gpr.key'] ?: System.getenv("GPR_API_KEY")
                 }
             }
