@@ -24,9 +24,12 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: "maven-publish"
+
     def getVersionName = { ->
         return "0.0.1"
     }
+    def github = new Properties()
+    github.load(new FileInputStream(rootProject.file("github.properties")))
 
     publishing {
         repositories {
@@ -34,8 +37,8 @@ subprojects {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/elshaborymohammed/Requster")
                 credentials {
-                    username = project.findProperty("gpr.user") ?: System.getenv("USERNAME")
-                    password = project.findProperty("gpr.key") ?: System.getenv("TOKEN")
+                    username = github['gpr.usr'] ?: System.getenv("GPR_USER")
+                    password = github['gpr.key'] ?: System.getenv("GPR_API_KEY")
                 }
             }
         }
@@ -45,21 +48,8 @@ subprojects {
                 groupId "com.compact.requester"
                 artifactId ARTIFACT_ID
                 version getVersionName()
-                artifact("$buildDir/outputs/aar/${ARTIFACT_ID}-release.aar")
+                artifact("$buildDir/libs/${ARTIFACT_ID}.jar")
             }
         }
     }
 }
-
-//subprojects {
-//    def githubProperties = new Properties()
-//    githubProperties.load(new FileInputStream(rootProject.file("github.properties")))
-//
-//    def getVersionName = { ->
-//        return "0.0.1" // Replace with version Name
-//    }
-//
-//    def getArtifactId = { ->
-//        return "otpview" // Replace with library name ID
-//    }
-//}
