@@ -26,7 +26,7 @@ subprojects {
     apply plugin: "maven-publish"
 
     def getVersionName = { ->
-        return "0.0.2"
+        return "0.0.3"
     }
 
     publishing {
