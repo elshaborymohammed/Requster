@@ -26,10 +26,8 @@ subprojects {
     apply plugin: "maven-publish"
 
     def getVersionName = { ->
-        return "0.0.1"
+        return "0.0.2"
     }
-    def github = new Properties()
-    github.load(new FileInputStream(rootProject.file("github.properties")))
 
     publishing {
         repositories {
@@ -37,8 +35,8 @@ subprojects {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/elshaborymohammed/Requster")
                 credentials {
-                    username = github['gpr.user'] ?: System.getenv("GPR_USER")
-                    password = github['gpr.key'] ?: System.getenv("GPR_API_KEY")
+                    username = System.getenv("GPR_USER")
+                    password = System.getenv("GPR_API_KEY")
                 }
             }
         }

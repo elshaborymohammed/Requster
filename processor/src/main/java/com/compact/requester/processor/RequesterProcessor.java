@@ -1,7 +1,6 @@
 package com.compact.requester.processor;
 
 import com.compact.requester.annotation.Requester;
-import com.google.auto.service.AutoService;
 import com.squareup.javapoet.FieldSpec;
 import com.squareup.javapoet.JavaFile;
 import com.squareup.javapoet.MethodSpec;
@@ -34,11 +33,8 @@ import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
 
 import retrofit2.Retrofit;
-//import net.ltgt.gradle.incap.IncrementalAnnotationProcessor;
-//import net.ltgt.gradle.incap.IncrementalAnnotationProcessorType;
 
-//@IncrementalAnnotationProcessor(IncrementalAnnotationProcessorType.AGGREGATING)
-@AutoService(Processor.class)
+//@AutoService(Processor.class)
 public class RequesterProcessor extends AbstractProcessor {
 
     private Messager messager;
